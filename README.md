@@ -28,22 +28,19 @@ The action is uses a simple Go tool to manipulate the Python environment. Check 
 3. Run `make interval` to run the program against a sample notebook
 4. Git checkout a branch for local development 
 ```bash
-git checkout -b name-of-branch
+$ git checkout -b name-of-branch
 ```
 5. create a python virtual environment, install requirements and fetch any go dependencies
 ```bash
 # create python dev environment
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
 
 # get go deps
-go mod download
+$ go mod download
 ```
 5. Use `make run` the docker image locally
-
-# Licensing
-This progect is distributed under an [Apache License](LISCENCE)
 
 # References
 [Versioning Guide](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
