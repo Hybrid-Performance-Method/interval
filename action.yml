@@ -1,0 +1,12 @@
+name: Interval
+author: Ian Kaplan
+
+description: "A lean Jupyter notebook runner for simple and fast Github Workflows"
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'clock'
+  color: 'yellow'
