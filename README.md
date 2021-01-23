@@ -32,7 +32,7 @@ The action is uses a simple Go tool to manipulate the Python environment. Check 
 ```bash
 $ git checkout -b name-of-branch
 ```
-5. create a python virtual environment, install requirements and fetch any go dependencies
+5. Create a python virtual environment, install requirements and fetch any go dependencies
 ```bash
 # create python dev environment
 $ python -m venv venv
