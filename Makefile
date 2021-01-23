@@ -2,7 +2,7 @@ build:
 	docker build . -t hpm/interval --no-cache
 
 docker: build
-	docker run -it --rm hpm/interval:latest
+	docker run --rm hpm/interval:latest
 push:
 
 interval: build-bin exec
