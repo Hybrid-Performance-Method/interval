@@ -1,5 +1,7 @@
 # HYBRID Interval ⏱️
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Build Passing](https://github.com/Hybrid-Performance-Method/interval/workflows/build-tests/badge.svg)
 
 "A lean Jupyter notebook runner for simple and fast Github Workflows"
 
@@ -30,7 +32,7 @@ The action is uses a simple Go tool to manipulate the Python environment. Check 
 ```bash
 $ git checkout -b name-of-branch
 ```
-5. create a python virtual environment, install requirements and fetch any go dependencies
+5. Create a python virtual environment, install requirements and fetch any go dependencies
 ```bash
 # create python dev environment
 $ python -m venv venv
@@ -40,7 +42,7 @@ $ pip install -r requirements.txt
 # get go deps
 $ go mod download
 ```
-5. Use `make run` the docker image locally
+5. Use `make docker` to build and run the docker image locally
 
 # References
 [Versioning Guide](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
