@@ -1,7 +1,11 @@
 build:
-	docker build . -t hpm/looseleaf --no-cache
+	docker build . -t hpm/interval --no-cache
 
-run:
-	docker run -it --rm hpm/looseleaf
+run: build
+	docker run -it --rm hpm/interval
 
 push:
+
+interval:
+	go build -o ./interval main.go
+	./interval

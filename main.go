@@ -34,12 +34,7 @@ func CreateEnv() {
 }
 
 func RunNotebook() {
-	// notebook setup
-	cmd := exec.Command("pip", "install", "jupyter", "papermill", "ipykernel")
-	if err := cmd.Run(); err != nil {
-		log.Fatal(err)
-	}
-	cmdKernel := exec.Command("python", "-m", "ipykernel", "install", "--user", "--name", "Looseleaf")
+	cmdKernel := exec.Command("python", "-m", "ipykernel", "install", "--user", "--name", "interval")
 	if err := cmdKernel.Run(); err != nil {
 		log.Fatal("kernel error", err)
 	}
@@ -49,6 +44,6 @@ func RunNotebook() {
 	cmdRun.Stdout = os.Stdout
 	cmdRun.Stderr = os.Stderr
 	if err := cmdRun.Run(); err != nil {
-		log.Fatal("Looseleaf Error: ", err)
+		log.Fatal("Interval Error: ", err)
 	}
 }
