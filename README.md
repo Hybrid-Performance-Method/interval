@@ -1,6 +1,6 @@
 # HYBRID Interval ⏱️
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
+[!Build Passing](https://github.com/actions/Hybrid-Performance-Method/interval/.github/workflows/tests.yml/badge.svg)
 "A lean Jupyter notebook runner for simple and fast Github Workflows"
 
 Interval makes running Jupyter notebooks on cron schedules easy. It uses [Papermill](https://github.com/nteract/papermill)
@@ -40,7 +40,7 @@ $ pip install -r requirements.txt
 # get go deps
 $ go mod download
 ```
-5. Use `make run` the docker image locally
+5. Use `make docker` to build and run the docker image locally
 
 # References
 [Versioning Guide](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
