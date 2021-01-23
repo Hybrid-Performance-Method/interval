@@ -8,12 +8,12 @@ import (
 )
 
 func main() {
-	createEnv()
+	CreateEnv()
 	RunNotebook()
 	fmt.Println("✔️ Finished ✔️")
 }
 
-func createEnv() {
+func CreateEnv() {
 	fmt.Println("⏱️ Starting Interval ⏱️")
 	// create virtual environment
 	// create virtual environment
