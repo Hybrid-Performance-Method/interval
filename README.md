@@ -42,7 +42,10 @@ jobs:
 # Secrets
 
 - Secrets must be passed in a `with` field and will be available in the `INPUT_SECRET` environment variable. 
+
+
 - Secrets are passed into the actions container at run time using the workflow expression syntax.
+
 - To pass multiple secrets into a notebook environment create a new secret composed of one or more secrets separated by a github approved character. 
 Remember that it's best practice to create a unique secret with least privileges for each job.
 
@@ -56,12 +59,6 @@ api_key = secret[0]
 connection_string = secret[1]
 ```
 
-# Development Notes
-    - paramterization
-    - secrets support
-    - usage docs
-    - add tests
-
 # Contributing
 Contributions are Welcome!
 
@@ -69,12 +66,16 @@ The action is uses a simple Go tool to manipulate the Python environment. Check 
 
 ## Steps
 1. Fork the interval repo
+
 2. Clone locally git clone https://github.com/Hybrid-Performance-Method/interval.git
+
 3. Run `make interval` to run the program against a sample notebook
+
 4. Git checkout a branch for local development 
 ```bash
 $ git checkout -b name-of-branch
 ```
+
 5. Create a python virtual environment, install requirements and fetch any go dependencies
 ```bash
 # create python dev environment
@@ -85,7 +86,7 @@ $ pip install -r requirements.txt
 # get go deps
 $ go mod download
 ```
-5. Use `make docker` to build and run the docker image locally
+6. Use `make docker` to build and run the docker image locally
 
 # References
 [Versioning Guide](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
