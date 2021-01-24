@@ -61,12 +61,11 @@ Remember that it's best practice to create a unique secret with least privileges
 
 Here's an example of how to handle multiple secrets in one secret variable in a notebook cell.
 ```python
-two_secret_string = "secret1_secret2"
 delimiter = "_"
 secrets = os.ENVIRON["INPUT_SECRET"]
-assert secret[0] == "secret1"
-api_key = secret[0]
-connection_string = secret[1]
+
+def handle_interval_secret(secret_string: str, delimiter: str) -> List[str]:secretsring.split(delimiter)
+  return secret_sring.split(delimiter)
 ```
 
 # Contributing
