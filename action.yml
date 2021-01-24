@@ -1,4 +1,4 @@
-name: Interval
+name: hybrid-interval
 author: Ian Kaplan
 description: "A lean Jupyter notebook runner for simple and fast Github Workflows"
 inputs:
