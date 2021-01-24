@@ -68,16 +68,18 @@ Here's an example of how to handle multiple secrets in one secret variable in a 
 delimiter = "_"
 secrets = os.ENVIRON["INPUT_SECRET"]
 
-def handle_interval_secret(secret_string: str, delimiter: str) -> List[str]:secretsring.split(delimiter)
+def handle_interval_secret(secret_string: str, delimiter: str) -> List[str]:
   return secret_sring.split(delimiter)
 ```
 
 # Contributing
+
 Contributions are Welcome!
 
 The action is uses a simple Go tool to manipulate the Python environment. Check out the [code of conduct](CONDUCT) before contributing.
 
 ## Steps
+
 1. Fork the interval repo
 
 2. Clone locally git clone https://github.com/Hybrid-Performance-Method/interval.git
