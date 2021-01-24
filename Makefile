@@ -7,10 +7,3 @@ docker: build
 	--env INPUT_SECRET=intervalsecret \
 	--env INPUT_PARAMETERFILE=parameters.yml \
 	hpm/interval:latest
-
-# for development
-interval: build-bin exec
-build-bin:
-	go build -o ./interval main.go 
-exec:
-	./interval
