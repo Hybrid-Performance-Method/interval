@@ -12,6 +12,7 @@ Interval is built with the idea that simple is effective, just like a workout.
 See [action.yml](action.yml)
 
 Basic:  
+
 ```yaml
 steps:
 - uses: Hybrid-Performance-Method/interval@v1
@@ -20,6 +21,7 @@ steps:
 ```
 
 Full Workflow:
+
 ```yaml
 name: nightly-job
 on:
@@ -39,6 +41,7 @@ jobs:
         requirements: "package1==1.0.0 package2==1.1.0"
         secret: ${{ secret.MY_SECRETS }}
 ```
+
 # Parameters
 
 - Interval takes a parameters input as a `parameters.yml` file (not `.yaml`) or a yaml string. See [papermill](https://github.com/nteract/papermill) for more details on notebook parameterization.
@@ -60,6 +63,7 @@ jobs:
 Remember that it's best practice to create a unique secret with least privileges for each job.
 
 Here's an example of how to handle multiple secrets in one secret variable in a notebook cell.
+
 ```python
 delimiter = "_"
 secrets = os.ENVIRON["INPUT_SECRET"]
@@ -81,11 +85,13 @@ The action is uses a simple Go tool to manipulate the Python environment. Check 
 3. Run `make interval` to run the program against a sample notebook
 
 4. Git checkout a branch for local development 
+
 ```bash
 $ git checkout -b name-of-branch
 ```
 
 5. Create a python virtual environment, install requirements and fetch any go dependencies
+
 ```bash
 # create python dev environment
 $ python -m venv venv
@@ -95,6 +101,7 @@ $ pip install -r requirements.txt
 # get go deps
 $ go mod download
 ```
+
 6. Use `make docker` to build and run the docker image locally
 
 # References
