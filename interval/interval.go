@@ -12,17 +12,7 @@ import (
 
 func CreateEnv(requirements string) {
 	fmt.Println("⏱️ Starting Interval ⏱️")
-	// create virtual environment
-	// create virtual environment
-	cmd1 := exec.Command("python", "-m", "venv", "venv")
-	if err := cmd1.Run(); err != nil {
-		log.Fatal("python venv Error: ")
-	}
-	// activate by running a bash command
-	cmd2 := exec.Command("bash", "-c", "source venv/bin/activate")
-	if err := cmd2.Run(); err != nil {
-		log.Fatal("bash source error: ", err)
-	}
+
 	if requirements != "" {
 		req := ParseRequirements(requirements)
 		for _, r := range req {
