@@ -3,7 +3,7 @@ build:
 	docker build . -t hpm/interval --no-cache
 
 docker: build
-	docker run --rm hpm/interval:latest
+	docker run --env INPUT_NOTEBOOK=sample.ipynb hpm/interval:latest
 
 # for development
 interval: build-bin exec
