@@ -107,7 +107,9 @@ $ pip install -r requirements.txt
 $ go mod download
 ```
 
-5. `make docker` is useful for local debugging
+5. `make docker` is useful for local runs and debugging
+
+6. Open up a PR and explain the feature or bug fix.
 
 # References
 [Versioning Guide](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
