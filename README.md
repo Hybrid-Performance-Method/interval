@@ -15,7 +15,7 @@ Basic:
 
 ```yaml
 steps:
-- uses: Hybrid-Performance-Method/hybrid-interval@v1.0.0
+- uses: Hybrid-Performance-Method/hybrid-interval@v1
   with:
     notebook: notebook.ipynb
 ```
@@ -34,7 +34,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run interval
-      uses: Hybrid-Performance-Method/hybrid-interval@v1.0.0
+      uses: Hybrid-Performance-Method/hybrid-interval@v1
       with:
         notebook: notebook.ipynb
         parameters: parameters.yml
