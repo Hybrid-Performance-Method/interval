@@ -15,7 +15,6 @@ FROM python:3.8-slim
 
 COPY --from=build /bin/action /app
 COPY *.ipynb .
-COPY *.yaml .
 COPY *.yml .
 COPY --from=build /src/requirements.txt .
 
