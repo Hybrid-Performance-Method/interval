@@ -84,7 +84,9 @@ The action is uses a simple Go tool to manipulate the Python environment. Check 
 
 2.  Clone the repo
 
-`git clone https://github.com/Hybrid-Performance-Method/interval.git`
+``` bash
+$ git clone https://github.com/Hybrid-Performance-Method/interval.git`
+```
 
 3. Git checkout a branch for local development 
 
