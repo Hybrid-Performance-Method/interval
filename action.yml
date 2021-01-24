@@ -3,7 +3,7 @@ author: Ian Kaplan
 description: "A lean Jupyter notebook runner for simple and fast Github Workflows"
 inputs:
   notebook:
-    description: "Notebook to run"
+    description: "Notebook to run on Interval"
     required: true
   requirements:
     description: "String of requirements to pass into container e.x. 'package1==1.0.0 package2==1.1.0'"
@@ -11,10 +11,13 @@ inputs:
   parameters:
     description: "Papermill will inject the yaml string [-y] [value] into the #parameters cell"
     required: false
-  secrets:
-    description: "Pass a secret string with the key 'IntervalSecret' for this job. 
-    If multiple secrets are required split the strings by index once in the notebook"
+  parameterFile:
+    description: "Option for passing in a parameters.yml file"
     required: false
+  secret:
+    required: false
+    description: "Gives Notebook access to secrets in execution environment. 
+      Use expression syntax (e.g. ${{ secret.IntervalSecret }}) to mask value"
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -22,7 +25,7 @@ runs:
     - ${{ inputs.parameters }}
     - ${{ inputs.requirements }}
     - ${{ inputs.notebook }}
-    - ${{ secrets.IntervalSecret }}
+    - ${{ inputs.secret }}
 branding:
   icon: 'clock'
   color: 'yellow'
