@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![Build Passing](https://github.com/Hybrid-Performance-Method/interval/workflows/build/badge.svg)
 
-Interval makes scheduling Jupyter notebooks in github actions schedules easy. It uses [Papermill](https://github.com/nteract/papermill) behind the scenes to paramaterize notebooks for scripting jobs.
+Interval makes scheduling Jupyter notebook runs using Github Actions easy. It's a [Go](https://golang.org/) utility that runs [Papermill](https://github.com/nteract/papermill) behind the scenes to paramaterize notebooks for scripting jobs.
 
 Interval is built with the idea that simple is effective, just like a workout.
 
