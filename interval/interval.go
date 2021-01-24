@@ -38,6 +38,8 @@ func RunNotebook(notebook, params string) {
 		cmdRun = exec.Command("papermill", notebook, "success.ipynb")
 	case "parameters.yaml":
 		cmdRun = exec.Command("papermill", notebook, "success.ipynb", "-f", params)
+	case "parameters.yml":
+		cmdRun = exec.Command("papermill", notebook, "success.ipynb", "-f", params)
 	default:
 		cmdRun = exec.Command("papermill", notebook, "success.ipynb", "-y", params)
 	}
@@ -93,12 +95,13 @@ func GetParamsFile() string {
 }
 
 // GetSecrets finds a secrets string and assigns it to the environmnent variable SECRETS
+/*
 func GetSecrets() {
 	fmt.Println("Looking for secrets...")
 	secrets := githubactions.GetInput("secrets")
 	if secrets != "" {
 		fmt.Println("⚡ Found Secrets ⚡")
 	}
-	secrets = "test"
-	githubactions.SetEnv("SECRETS", secrets)
+	githubactions.SetEnv("SECRET", secrets)
 }
+*/

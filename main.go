@@ -12,7 +12,7 @@ func main() {
 	reqs := interval.GetRequirements()
 	params := interval.GetParams()
 	paramsFile := interval.GetParamsFile()
-	interval.GetSecrets()
+	// interval.GetSecrets()
 
 	// parameters can either be string or parameters.yml file
 	if paramsFile != "" {

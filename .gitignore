@@ -2,3 +2,5 @@ venv/
 ./interval
 succes.ipynb
 .vscode
+.ipynb_*
+.virtual_*
