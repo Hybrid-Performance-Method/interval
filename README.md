@@ -82,17 +82,17 @@ The action is uses a simple Go tool to manipulate the Python environment. Check 
 
 1. Fork the interval repo
 
-2. Clone locally git clone https://github.com/Hybrid-Performance-Method/interval.git
+2.  Clone the repo
 
-3. Run `make interval` to run the program against a sample notebook
+`git clone https://github.com/Hybrid-Performance-Method/interval.git`
 
-4. Git checkout a branch for local development 
+3. Git checkout a branch for local development 
 
 ```bash
 $ git checkout -b name-of-branch
 ```
 
-5. Create a python virtual environment, install requirements and fetch any go dependencies
+4. Create a python virtual environment, install requirements and fetch any go dependencies
 
 ```bash
 # create python dev environment
@@ -104,7 +104,7 @@ $ pip install -r requirements.txt
 $ go mod download
 ```
 
-6. `make docker` is useful for local debugging
+5. `make docker` is useful for local debugging
 
 # References
 [Versioning Guide](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
