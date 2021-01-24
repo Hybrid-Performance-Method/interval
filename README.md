@@ -9,7 +9,52 @@ Interval makes scheduling Jupyter notebooks in github actions schedules easy. It
 Interval is built with the idea that simple is effective, just like a workout.
 
 # Usage
-see [action.yml](action.yml)
+See [action.yml](action.yml)
+
+Basic:  
+```yaml
+steps:
+- uses: Hybrid-Performance-Method/interval@v1
+  with:
+    notebook: notebook.ipynb
+```
+
+Full Workflow:
+```yaml
+name: nightly-job
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run interval
+      uses: Hybrid-Performance-Method/interval@v1
+      with:
+        notebook: notebook.ipynb
+        parameters: parameters.yml
+        secret: ${{ secret.MY_SECRETS }}
+```
+
+# Secrets
+
+- Secrets must be passed in a `with` field and will be available in the `INPUT_SECRET` environment variable. 
+- Secrets are passed into the actions container at run time using the workflow expression syntax.
+- To pass multiple secrets into a notebook environment create a new secret composed of one or more secrets separated by a github approved character. 
+Remember that it's best practice to create a unique secret with least privileges for each job.
+
+Here's an example of how to handle multiple secrets in one secret variable in a notebook cell.
+```python
+two_secret_string = "secret1_secret2"
+delimiter = "_"
+secrets = os.ENVIRON["INPUT_SECRET"]
+assert secret[0] == "secret1"
+api_key = secret[0]
+connection_string = secret[1]
+```
 
 # Development Notes
     - paramterization

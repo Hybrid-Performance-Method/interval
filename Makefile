@@ -4,7 +4,7 @@ build:
 
 docker: build
 	docker run --env INPUT_NOTEBOOK=test_notebook.ipynb \
-	--env INPUT_SECRETS=intervalsecret \
+	--env INPUT_SECRET=intervalsecret \
 	--env INPUT_PARAMETERFILE=parameters.yml \
 	hpm/interval:latest
 

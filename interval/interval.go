@@ -95,13 +95,11 @@ func GetParamsFile() string {
 }
 
 // GetSecrets finds a secrets string and assigns it to the environmnent variable SECRETS
-/*
-func GetSecrets() {
+
+func ReadSecrets() {
 	fmt.Println("Looking for secrets...")
 	secrets := githubactions.GetInput("secrets")
 	if secrets != "" {
 		fmt.Println("⚡ Found Secrets ⚡")
 	}
-	githubactions.SetEnv("SECRET", secrets)
 }
-*/

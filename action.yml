@@ -14,7 +14,7 @@ inputs:
   parameterFile:
     description: "Option for passing in a parameters.yml file"
     required: false
-  secrets:
+  secret:
     required: false
     description: "Gives Notebook access to secrets in execution environment. 
       Use expression syntax (e.g. ${{ secret.IntervalSecret }}) to mask value"
@@ -25,7 +25,7 @@ runs:
     - ${{ inputs.parameters }}
     - ${{ inputs.requirements }}
     - ${{ inputs.notebook }}
-    - ${{ inputs.secrets }}
+    - ${{ inputs.secret }}
 branding:
   icon: 'clock'
   color: 'yellow'
