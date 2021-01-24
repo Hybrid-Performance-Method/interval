@@ -36,10 +36,18 @@ jobs:
       with:
         notebook: notebook.ipynb
         parameters: parameters.yml
+        requirements: "package1==1.0.0 package2==1.1.0"
         secret: ${{ secret.MY_SECRETS }}
 ```
 # Parameters
+
 - Interval takes a parameters input as a `parameters.yml` file (not `.yaml`) or a yaml string. See [papermill](https://github.com/nteract/papermill) for more details on notebook parameterization.
+
+# Requirements
+
+- It's often desirable to package notebooks with all of their requirements and install them in the first code cell.
+
+- If additional requirements need to be stated outside of the noteboook it can be provided as a space delimited string. Please state versions. 
 
 # Secrets
 
