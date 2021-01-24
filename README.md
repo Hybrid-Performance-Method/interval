@@ -50,19 +50,20 @@ jobs:
 
 - It's often desirable to package notebooks with all of their requirements and install them in the first code cell.
 
-- If additional requirements need to be stated outside of the noteboook it can be provided as a space delimited string. Please state versions. 
+- If additional requirements need to be stated outside of the noteboook they can be provided as a single space delimited string. 
+
+- It's always a good idea to include versions in requirements specifications.
 
 ## Secrets
 
 - Secrets must be passed in a `with` field and will be available in the `INPUT_SECRET` environment variable. 
-
 
 - Secrets are passed into the actions container at run time using the workflow expression syntax.
 
 - To pass multiple secrets into a notebook environment create a new secret composed of one or more secrets separated by a github approved character. 
 Remember that it's best practice to create a unique secret with least privileges for each job.
 
-Here's an example of how to handle multiple secrets in one secret variable in a notebook cell.
+Here's a simple way handle multiple secrets in one secret variable in a notebook cell.
 
 ```python
 delimiter = "_"
