@@ -38,6 +38,8 @@ jobs:
         parameters: parameters.yml
         secret: ${{ secret.MY_SECRETS }}
 ```
+# Parameters
+- Interval takes a parameters input as a `parameters.yml` file (not `.yaml`) or a yaml string. See [papermill](https://github.com/nteract/papermill) for more details on notebook parameterization.
 
 # Secrets
 

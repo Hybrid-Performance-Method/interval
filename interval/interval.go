@@ -36,8 +36,6 @@ func RunNotebook(notebook, params string) {
 	switch params {
 	case "":
 		cmdRun = exec.Command("papermill", notebook, "success.ipynb")
-	case "parameters.yaml":
-		cmdRun = exec.Command("papermill", notebook, "success.ipynb", "-f", params)
 	case "parameters.yml":
 		cmdRun = exec.Command("papermill", notebook, "success.ipynb", "-f", params)
 	default:
