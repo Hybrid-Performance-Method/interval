@@ -11,9 +11,8 @@ inputs:
   parameters:
     description: "Papermill will inject the yaml string [-y] [value] into the #parameters cell"
     required: false
-  secrets:
-    description: "Pass a secret string with the key 'IntervalSecret' for this job. 
-    If multiple secrets are required split the strings by index once in the notebook"
+  parameterFile:
+    description: "Option for passing in a parameters.yml file"
     required: false
 runs:
   using: 'docker'
