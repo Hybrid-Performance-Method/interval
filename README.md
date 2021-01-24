@@ -42,17 +42,17 @@ jobs:
         secret: ${{ secret.MY_SECRETS }}
 ```
 
-# Parameters
+## Parameters
 
 - Interval takes a parameters input as a `parameters.yml` file (not `.yaml`) or a yaml string. See [papermill](https://github.com/nteract/papermill) for more details on notebook parameterization.
 
-# Requirements
+## Requirements
 
 - It's often desirable to package notebooks with all of their requirements and install them in the first code cell.
 
 - If additional requirements need to be stated outside of the noteboook it can be provided as a space delimited string. Please state versions. 
 
-# Secrets
+## Secrets
 
 - Secrets must be passed in a `with` field and will be available in the `INPUT_SECRET` environment variable. 
 
@@ -104,7 +104,7 @@ $ pip install -r requirements.txt
 $ go mod download
 ```
 
-6. Use `make docker` to build and run the docker image locally
+6. `make docker` is useful for local debugging
 
 # References
 [Versioning Guide](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
