@@ -21,7 +21,7 @@ inputs:
   outputNotebook:
     description: "Specifies output notebook filepath e.x 's3://outputs/interval.ipynb'"
     required: false
-    default: "output.ipynb"
+    default: output.ipynb
   hasDate:
     description: "Adds date to ouptut filename e.x. 's3://outputs/interval-2020-01-01.ipynb' "
     required: false

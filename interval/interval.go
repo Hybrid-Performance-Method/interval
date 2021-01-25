@@ -89,7 +89,7 @@ func GetParams() string {
 }
 
 func GetParamsFile() string {
-	yml := githubactions.GetInput("parameterFile")
+	yml := githubactions.GetInput("parameterfile")
 	fmt.Println("Reading Parameters file:", yml)
 	if yml != "" && !strings.HasPrefix(yml, "parameters") {
 		githubactions.Fatalf("Parameters Error: %v is not a valid", yml)
@@ -107,8 +107,8 @@ func ReadSecrets() {
 }
 
 func GetOutputNotebook() string {
-	o := githubactions.GetInput("outputNotebook")
-	fmt.Println("Reading output NotebooK:", o)
+	o := githubactions.GetInput("outputnotebook")
+	fmt.Println("Reading output Notebook:", o)
 	if !strings.HasSuffix(o, "ipynb") {
 		githubactions.Fatalf("Notebook Error: %v is not a valid", o)
 	}
