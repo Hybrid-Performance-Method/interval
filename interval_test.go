@@ -1,8 +1,10 @@
 package main_test
 
 import (
+	"fmt"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/Hybrid-Performance-Method/interval/interval"
 	"github.com/stretchr/testify/assert"
@@ -22,6 +24,15 @@ func TestParsing(t *testing.T) {
 
 func TestAddDateString(t *testing.T) {
 	t.Parallel()
-	file := "output.ipynb"
-	assert.Equal(t, interval.AddDateString(file), "output-2021-01-24.ipynb")
+	testFile := "output.ipynb"
+
+	// sample date and layout
+	layout := "2006-01-02T15:04:05.000Z"
+	str := "2014-11-12T11:45:26.371Z"
+
+	d, err := time.Parse(layout, str)
+	if err != nil {
+		fmt.Println(err)
+	}
+	assert.Equal(t, interval.AddDateString(testFile, d), "output-2014-11-12.ipynb")
 }

@@ -34,7 +34,7 @@ func RunNotebook(notebook, output, params string) {
 	}
 
 	if date := readDate(); date == "true" {
-		output = AddDateString(output)
+		output = AddDateString(output, time.Now())
 	}
 
 	var cmdRun *exec.Cmd
@@ -119,9 +119,8 @@ func readDate() string {
 	return githubactions.GetInput("hasDate")
 }
 
-func AddDateString(file string) string {
-	t := time.Now()
+func AddDateString(file string, d time.Time) string {
 	f := strings.Split(file, ".")
-	output := fmt.Sprint(f[0] + "-" + t.Format("2006-01-02") + ".ipynb")
+	output := fmt.Sprint(f[0] + "-" + d.Format("2006-01-02") + ".ipynb")
 	return output
 }
