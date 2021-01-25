@@ -15,17 +15,28 @@ inputs:
     description: "Option for passing in a parameters.yml file"
     required: false
   secret:
-    required: false
     description: "Gives Notebook access to secrets in execution environment. 
       Use expression syntax (e.g. ${{ secret.IntervalSecret }}) to mask value"
+    required: false
+  outputNotebook:
+    description: "Specifies output notebook filepath e.x 's3://outputs/interval.ipynb'"
+    required: false
+    default: output.ipynb
+  hasDate:
+    description: "Adds date to ouptut filename e.x. 's3://outputs/interval-2020-01-01.ipynb' "
+    required: false
+    default: "false"
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.parameters }}
+    - ${{ inputs.parameterFile }}
     - ${{ inputs.requirements }}
     - ${{ inputs.notebook }}
     - ${{ inputs.secret }}
+    - ${{ inputs.outputNotebook }}
+    - ${{ inputs.hasDate }}
 branding:
   icon: 'clock'
   color: 'yellow'
