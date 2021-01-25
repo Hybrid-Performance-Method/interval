@@ -31,6 +31,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.parameters }}
+    - ${{ inputs.parameterFile }}
     - ${{ inputs.requirements }}
     - ${{ inputs.notebook }}
     - ${{ inputs.secret }}
