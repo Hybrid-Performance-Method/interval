@@ -74,11 +74,13 @@ Remember that it's best practice to create a unique secret with least privileges
 Here's a simple way handle multiple secrets in one secret variable in a notebook cell.
 
 ```python
-delimiter = "_"
-secrets = os.ENVIRON["INPUT_SECRET"]
 
-def handle_interval_secret(secret_string: str, delimiter: str) -> List[str]:
+secrets_string = os.environ["INPUT_SECRET"]
+
+def handle_interval_secret(secrets_string: str, delimiter: str) -> List[str]:
   return secret_sring.split(delimiter)
+  
+secrets = handle_interval_secret(secrets_string, "_")
 ```
 
 # Contributing
