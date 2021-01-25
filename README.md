@@ -78,7 +78,7 @@ Here's a simple way handle multiple secrets in one secret variable in a notebook
 secrets_string = os.environ["INPUT_SECRET"]
 
 def handle_interval_secret(secrets_string: str, delimiter: str) -> List[str]:
-  return secret_sring.split(delimiter)
+    return secret_sring.split(delimiter)
   
 secrets = handle_interval_secret(secrets_string, "_")
 ```
