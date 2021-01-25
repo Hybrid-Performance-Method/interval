@@ -58,7 +58,7 @@ jobs:
 
 ## Output
 
-- Optionally specifies the file path for the artifact. the `hasdate` parameter adds a "YYYY-MM-DD" timestamp between the filename and the suffix.  
+- Optionally specifies the file path for the artifact. the `hasDate` parameter adds a "YYYY-MM-DD" string to the between the filename and the suffix (e.g. `output-2020-01-01.ipynb`). This is useful for recording artifacts of notebook runs in file stores such as S3 or GCS.
 
 - To persist the output of the job, specificy a file storage filepath such as `s3://notebooks/output.ipynb` along with the appropriate credentials. 
 
