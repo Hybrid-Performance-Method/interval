@@ -33,7 +33,7 @@ func RunNotebook(notebook, output, params string) {
 		log.Fatal("kernel error", err)
 	}
 
-	if date := readDate(); date == "true" {
+	if readDate() == "true" && output != "output.ipynb" {
 		output = AddDateString(output, time.Now())
 	}
 
@@ -108,7 +108,7 @@ func ReadSecrets() {
 
 func GetOutputNotebook() string {
 	o := githubactions.GetInput("outputNotebook")
-	fmt.Println("Reading output Notebool:", o)
+	fmt.Println("Reading output NotebooK:", o)
 	if !strings.HasSuffix(o, "ipynb") {
 		githubactions.Fatalf("Notebook Error: %v is not a valid", o)
 	}
