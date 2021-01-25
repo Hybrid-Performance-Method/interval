@@ -19,3 +19,9 @@ func TestParsing(t *testing.T) {
 	nb := "notebook.ipynb"
 	assert.Equal(t, strings.HasSuffix(nb, "ipynb"), true)
 }
+
+func TestAddDateString(t *testing.T) {
+	t.Parallel()
+	file := "output.ipynb"
+	assert.Equal(t, interval.AddDateString(file), "output-2021-01-24.ipynb")
+}

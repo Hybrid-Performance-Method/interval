@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 
 	"github.com/sethvargo/go-githubactions"
 )
@@ -24,7 +25,7 @@ func CreateEnv(requirements string) {
 	}
 }
 
-func RunNotebook(notebook, params string) {
+func RunNotebook(notebook, output, params string) {
 	fmt.Println("Taking notes with Papermill ⏳")
 	// Start kernel
 	cmdKernel := exec.Command("python", "-m", "ipykernel", "install", "--user", "--name", "interval")
@@ -32,14 +33,18 @@ func RunNotebook(notebook, params string) {
 		log.Fatal("kernel error", err)
 	}
 
+	if date := readDate(); date == "true" {
+		output = AddDateString(output)
+	}
+
 	var cmdRun *exec.Cmd
 	switch params {
 	case "":
-		cmdRun = exec.Command("papermill", notebook, "success.ipynb")
+		cmdRun = exec.Command("papermill", notebook, output)
 	case "parameters.yml":
-		cmdRun = exec.Command("papermill", notebook, "success.ipynb", "-f", params)
+		cmdRun = exec.Command("papermill", notebook, output, "-f", params)
 	default:
-		cmdRun = exec.Command("papermill", notebook, "success.ipynb", "-y", params)
+		cmdRun = exec.Command("papermill", notebook, output, "-y", params)
 	}
 
 	cmdRun.Stdin = os.Stdin
@@ -79,7 +84,7 @@ func GetNotebook() string {
 // parameters are formatted in yaml string
 func GetParams() string {
 	p := githubactions.GetInput("parameters")
-	fmt.Println("Reading paramter string:", p)
+	fmt.Println("Reading paramter string: ", p)
 	return p
 }
 
@@ -92,12 +97,31 @@ func GetParamsFile() string {
 	return yml
 }
 
-// GetSecrets finds a secrets string and assigns it to the environmnent variable SECRETS
-
+// ReadSecrets finds a secrets string and assigns it to the environmnent variable SECRETS
 func ReadSecrets() {
 	fmt.Println("Looking for secrets...")
 	secrets := githubactions.GetInput("secrets")
 	if secrets != "" {
 		fmt.Println("⚡ Found Secrets ⚡")
 	}
+}
+
+func GetOutputNotebook() string {
+	o := githubactions.GetInput("outputNotebook")
+	fmt.Println("Reading output Notebool:", o)
+	if !strings.HasSuffix(o, "ipynb") {
+		githubactions.Fatalf("Notebook Error: %v is not a valid", o)
+	}
+	return o
+}
+
+func readDate() string {
+	return githubactions.GetInput("hasDate")
+}
+
+func AddDateString(file string) string {
+	t := time.Now()
+	f := strings.Split(file, ".")
+	output := fmt.Sprint(f[0] + "-" + t.Format("2006-01-02") + ".ipynb")
+	return output
 }

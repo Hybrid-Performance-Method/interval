@@ -9,6 +9,7 @@ import (
 func main() {
 	// get inputs
 	nb := interval.GetNotebook()
+	out := interval.GetOutputNotebook()
 	reqs := interval.GetRequirements()
 	params := interval.GetParams()
 	paramsFile := interval.GetParamsFile()
@@ -21,6 +22,6 @@ func main() {
 
 	// run interval
 	interval.CreateEnv(reqs)
-	interval.RunNotebook(nb, params)
+	interval.RunNotebook(nb, out, params)
 	fmt.Println("✔️ Finished ✔️")
 }

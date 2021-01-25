@@ -37,6 +37,8 @@ jobs:
       uses: Hybrid-Performance-Method/hybrid-interval@v1
       with:
         notebook: notebook.ipynb
+        output: s3://notebooks/output.ipynb
+        hasDate: "true"
         parameters: parameters.yml
         requirements: "package1==1.0.0 package2==1.1.0"
         secret: ${{ secret.MY_SECRETS }}
@@ -52,10 +54,15 @@ jobs:
 
 - If additional requirements need to be stated outside of the noteboook it can be provided as a space delimited string. Please state versions. 
 
+## Output
+
+- Optionally specifies the file path for the artifact. the `hasdate` parameter adds a "YYYY-MM-DD" timestamp between the filename and the suffix.  
+
+- To persist the output of the job, specificy a file storage filepath such as `s3://notebooks/output.ipynb` along with the appropriate credentials. 
+
 ## Secrets
 
 - Secrets must be passed in a `with` field and will be available in the `INPUT_SECRET` environment variable. 
-
 
 - Secrets are passed into the actions container at run time using the workflow expression syntax.
 
